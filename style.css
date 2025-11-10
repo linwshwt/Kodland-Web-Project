@@ -1,0 +1,261 @@
+/*CONFIGURACIÓN GENERAL*/
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #0B0E17;
+  color: #FFFFFF;
+  scroll-behavior: smooth;
+}
+
+/*HEADER*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #0B0E17;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;          
+  padding: 0 80px;
+  box-shadow: 0 4px 20px color: black;
+  z-index: 1000;                  
+  box-sizing: border-box;
+}
+
+/*LOGO*/
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 180px;
+  height: 130px;
+}
+
+/*MENÚ DE NAVEGACIÓN*/
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;        
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s;
+  position: relative;
+  padding: 5px 0;  
+}
+/*HERO*/
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 140px 80px 60px; 
+  background-color: #0B0E17;
+  min-height: 600px; 
+  box-sizing: border-box;
+}
+
+.hero-texto {
+  max-width: 720px;
+}
+
+.hero-texto h1 {
+  font-size: 60px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.hero-texto p {
+  font-size: 18px;
+  color: #A0A3AF;
+  margin: 0;
+  justify-content: left;
+}
+
+.hero-imagen img {
+  width: 400px;   
+  height: auto;
+  margin-right: 40px;
+}
+/*SECCIÓN NOTICIAS*/
+.noticias {
+  padding: 80px 80px 100px;
+  background-color: #0B0E17;
+}
+
+.noticias h2 {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+/*Línea decorativa azul bajo el título*/
+.noticias h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: #00B8FF;
+  margin: 14px auto 0;
+  border-radius: 2px;
+}
+
+/* EXTRA: GRID DE 3 COLUMNAS*/
+.contenedor-noticias {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px 50px; 
+  justify-items: stretch;
+}
+
+/*TARJETAS DE NOTICIAS*/
+.tarjeta {
+  background-color: #141823;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px color: black;
+  overflow: hidden;
+  min-height: 380px; 
+}
+
+
+/*Imagen más grande*/
+.tarjeta img {
+  width: 100%;
+  height: 220px; 
+  object-fit: cover;
+}
+
+/*Contenido dentro de la tarjeta*/
+.contenido-tarjeta {
+  padding: 28px; 
+}
+
+/* Título de noticia */
+.tarjeta h3 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin: 0 0 10px;
+}
+
+/* Fecha */
+.fecha {
+  display: block;
+  font-size: 14px;
+  color: #A0A3AF;
+  margin-bottom: 12px;
+}
+
+/* Descripción */
+.tarjeta p {
+  font-size: 16px;
+  color: #A0A3AF;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+  background-color: #141823;
+  text-align: center;
+  padding: 30px 0;
+  color: #A0A3AF;
+  font-size: 14px;
+}
+/* FORO / OPINIONES */
+.foro {
+  background-color: #0B0E17;
+  padding: 80px 80px 100px;
+  text-align: center;
+}
+
+.foro h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.descripcion-foro {
+  font-size: 16px;
+  color: #A0A3AF;
+  margin-bottom: 60px;
+}
+
+/* Contenedor principal (2 filas de 3 columnas) */
+.contenedor-opiniones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  justify-items: stretch;
+}
+
+/* Tarjetas de opiniones */
+.opinion {
+  background-color: #141823;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 4px 20px color: black;
+  transition: transform 0.3s;
+}
+
+/* Usuario y avatar */
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.usuario img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #00B8FF;
+}
+
+.usuario h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #00B8FF;
+  margin: 0;
+}
+
+/* Texto de opinión */
+.opinion p {
+  font-size: 16px;
+  color: #A0A3AF;
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+/* Fecha */
+.fecha-opinion {
+  font-size: 14px;
+  color: #A0A3AF;
+}
