@@ -9,23 +9,19 @@ body {
 
 /*HEADER*/
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100px;
-  background-color: #0B0E17cc;
+  background-color: #0B0E17;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; 
+  align-items: center;          
   padding: 0 80px;
-  backdrop-filter: blur(10px);
-  transition: box-shadow 0.3s ease;
-  z-index: 1000;
-}
-
-/* Sombras al hacer scroll */
-header:hover {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  z-index: 1000;                  
+  box-sizing: border-box;
 }
 
 /*LOGO*/
@@ -33,24 +29,27 @@ header:hover {
   width: 180px;
   height: 130px;
 
-  /* Animación simple */
-  animation: flotar 3s ease-in-out infinite alternate;
+  /* ANIMACIÓN suave */
+  animation: flotar 3s ease-in-out infinite alternate 0.5s;
+  animation-fill-mode: forwards;
 }
 
+/* Pausable */
+.logo img:hover {
+  animation-play-state: paused;
+}
+
+/* Fotogramas clave */
 @keyframes flotar {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-6px);
-  }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
 }
 
-/*MENÚ*/
+/*MENÚ DE NAVEGACIÓN*/
 nav ul {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 40px;        
   margin: 0;
   padding: 0;
 }
@@ -61,22 +60,23 @@ nav a {
   font-weight: 500;
   font-size: 16px;
   position: relative;
-  padding: 5px 0;
+  padding: 5px 0;  
   transition: 0.3s ease;
 }
 
-/* Línea animada al pasar el mouse */
+/* pseudo-elemento */
 nav a::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 0;
   width: 0%;
   height: 2px;
-  background-color: #00B8FF;
-  transition: width 0.3s;
+  background: #00B8FF;
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
 }
 
+/* pseudo-clase */
 nav a:hover::after {
   width: 100%;
 }
@@ -86,39 +86,45 @@ nav a:hover::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 140px 80px 60px;
+  padding: 140px 80px 60px; 
   background-color: #0B0E17;
-  min-height: 600px;
-  animation: aparecer 1.2s ease forwards;
+  min-height: 600px; 
+  box-sizing: border-box;
+
+  /* ANIMACIÓN de entrada */
+  animation: aparecer 1.2s ease-out forwards;
   opacity: 0;
 }
 
 @keyframes aparecer {
-  to { opacity: 1; transform: translateY(0); }
-  from { opacity: 0; transform: translateY(20px); }
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .hero-imagen img {
-  width: 400px;
-  transition: transform 0.3s ease;
+  width: 400px;   
+  transition: transform 0.3s;
 }
 
 .hero-imagen img:hover {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 /*SECCIÓN NOTICIAS*/
 .noticias {
   padding: 80px 80px 100px;
+  background-color: #0B0E17;
 }
 
 .noticias h2 {
   font-size: 32px;
+  font-weight: 600;
   text-align: center;
+  color: #FFFFFF;
   margin-bottom: 60px;
-  position: relative;
 }
 
+/*Línea decorativa con pseudo-elemento */
 .noticias h2::after {
   content: "";
   display: block;
@@ -127,35 +133,68 @@ nav a:hover::after {
   background-color: #00B8FF;
   margin: 14px auto 0;
   border-radius: 2px;
-  animation: crecer 2s infinite alternate ease-in-out;
 }
 
-@keyframes crecer {
-  from { width: 60px; }
-  to { width: 120px; }
-}
-
-/* GRID */
+/* GRID NOTICIAS */
 .contenedor-noticias {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 60px 50px;
 }
 
-/*TARJETAS*/
+/* Tarjetas */
 .tarjeta {
   background-color: #141823;
   border-radius: 12px;
   overflow: hidden;
+  min-height: 380px;
   transition: transform 0.3s ease;
 }
 
-/* Efecto hover suave */
 .tarjeta:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 }
 
-/* Opiniones */
+/* Imagen */
+.tarjeta img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Contenido tarjeta */
+.contenido-tarjeta {
+  padding: 28px; 
+}
+
+.tarjeta h3 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin: 0 0 10px;
+}
+
+.fecha {
+  display: block;
+  font-size: 14px;
+  color: #A0A3AF;
+  margin-bottom: 12px;
+}
+
+.tarjeta p {
+  font-size: 16px;
+  color: #A0A3AF;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* FORO */
+.foro {
+  background-color: #0B0E17;
+  padding: 80px 80px 100px;
+  text-align: center;
+}
+
 .contenedor-opiniones {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -166,16 +205,15 @@ nav a:hover::after {
   background-color: #141823;
   border-radius: 12px;
   padding: 30px;
-  transition: transform 0.3s ease, box-shadow 0.4s ease;
+  text-align: left;
+  transition: transform 0.3s ease;
 }
 
-/* Glow animado */
 .opinion:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 20px rgba(0,184,255,0.2);
 }
 
-/*FOOTER*/
+/* FOOTER */
 footer {
   background-color: #141823;
   text-align: center;
