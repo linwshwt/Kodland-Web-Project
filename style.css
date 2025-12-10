@@ -19,33 +19,29 @@ header {
   justify-content: space-between; 
   align-items: center;          
   padding: 0 80px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  box-shadow: 0 4px 20px color: black;
   z-index: 1000;                  
   box-sizing: border-box;
 }
 
 /*LOGO*/
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .logo img {
   width: 180px;
   height: 130px;
-
-  /* ANIMACIÓN suave */
-  animation: flotar 3s ease-in-out infinite alternate 0.5s;
-  animation-fill-mode: forwards;
-}
-
-/* Pausable */
-.logo img:hover {
-  animation-play-state: paused;
-}
-
-/* Fotogramas clave */
-@keyframes flotar {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-6px); }
 }
 
 /*MENÚ DE NAVEGACIÓN*/
+nav {
+  display: flex;
+  align-items: center;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -54,31 +50,18 @@ nav ul {
   padding: 0;
 }
 
+nav li {
+  display: inline-block;
+}
+
 nav a {
   text-decoration: none;
   color: #FFFFFF;
   font-weight: 500;
   font-size: 16px;
+  transition: color 0.3s;
   position: relative;
   padding: 5px 0;  
-  transition: 0.3s ease;
-}
-
-/* pseudo-elemento */
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background: #00B8FF;
-  left: 0;
-  bottom: 0;
-  transition: width 0.3s ease;
-}
-
-/* pseudo-clase */
-nav a:hover::after {
-  width: 100%;
 }
 
 /*HERO*/
@@ -90,24 +73,31 @@ nav a:hover::after {
   background-color: #0B0E17;
   min-height: 600px; 
   box-sizing: border-box;
-
-  /* ANIMACIÓN de entrada */
-  animation: aparecer 1.2s ease-out forwards;
-  opacity: 0;
 }
 
-@keyframes aparecer {
-  0% { opacity: 0; transform: translateY(15px); }
-  100% { opacity: 1; transform: translateY(0); }
+.hero-texto {
+  max-width: 720px;
+}
+
+.hero-texto h1 {
+  font-size: 60px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.hero-texto p {
+  font-size: 18px;
+  color: #A0A3AF;
+  margin: 0;
+  justify-content: left;
 }
 
 .hero-imagen img {
   width: 400px;   
-  transition: transform 0.3s;
-}
-
-.hero-imagen img:hover {
-  transform: scale(1.05);
+  height: auto;
+  margin-right: 40px;
 }
 
 /*SECCIÓN NOTICIAS*/
@@ -122,9 +112,10 @@ nav a:hover::after {
   text-align: center;
   color: #FFFFFF;
   margin-bottom: 60px;
+  position: relative;
 }
 
-/*Línea decorativa con pseudo-elemento */
+/*Línea decorativa azul bajo el título*/
 .noticias h2::after {
   content: "";
   display: block;
@@ -135,38 +126,36 @@ nav a:hover::after {
   border-radius: 2px;
 }
 
-/* GRID NOTICIAS */
+/* EXTRA: GRID DE 3 COLUMNAS*/
 .contenedor-noticias {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 60px 50px;
+  gap: 60px 50px; 
+  justify-items: stretch;
 }
 
-/* Tarjetas */
+/*TARJETAS DE NOTICIAS*/
 .tarjeta {
   background-color: #141823;
   border-radius: 12px;
+  box-shadow: 0 4px 20px color: black;
   overflow: hidden;
-  min-height: 380px;
-  transition: transform 0.3s ease;
+  min-height: 380px; 
 }
 
-.tarjeta:hover {
-  transform: translateY(-6px);
-}
-
-/* Imagen */
+/*Imagen más grande*/
 .tarjeta img {
   width: 100%;
-  height: 220px;
+  height: 220px; 
   object-fit: cover;
 }
 
-/* Contenido tarjeta */
+/*Contenido dentro de la tarjeta*/
 .contenido-tarjeta {
   padding: 28px; 
 }
 
+/* Título de noticia */
 .tarjeta h3 {
   font-size: 22px;
   font-weight: 500;
@@ -174,6 +163,7 @@ nav a:hover::after {
   margin: 0 0 10px;
 }
 
+/* Fecha */
 .fecha {
   display: block;
   font-size: 14px;
@@ -181,36 +171,12 @@ nav a:hover::after {
   margin-bottom: 12px;
 }
 
+/* Descripción */
 .tarjeta p {
   font-size: 16px;
   color: #A0A3AF;
   margin: 0;
   line-height: 1.6;
-}
-
-/* FORO */
-.foro {
-  background-color: #0B0E17;
-  padding: 80px 80px 100px;
-  text-align: center;
-}
-
-.contenedor-opiniones {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-
-.opinion {
-  background-color: #141823;
-  border-radius: 12px;
-  padding: 30px;
-  text-align: left;
-  transition: transform 0.3s ease;
-}
-
-.opinion:hover {
-  transform: translateY(-6px);
 }
 
 /* FOOTER */
@@ -221,3 +187,149 @@ footer {
   color: #A0A3AF;
   font-size: 14px;
 }
+
+/* FORO / OPINIONES */
+.foro {
+  background-color: #0B0E17;
+  padding: 80px 80px 100px;
+  text-align: center;
+}
+
+.foro h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.descripcion-foro {
+  font-size: 16px;
+  color: #A0A3AF;
+  margin-bottom: 60px;
+}
+
+/* Contenedor principal (2 filas de 3 columnas) */
+.contenedor-opiniones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  justify-items: stretch;
+}
+
+/* Tarjetas de opiniones */
+.opinion {
+  background-color: #141823;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 4px 20px color: black;
+  transition: transform 0.3s;
+}
+
+/* Usuario y avatar */
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.usuario img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #00B8FF;
+}
+
+.usuario h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #00B8FF;
+  margin: 0;
+}
+
+/* Texto de opinión */
+.opinion p {
+  font-size: 16px;
+  color: #A0A3AF;
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+/* Fecha */
+.fecha-opinion {
+  font-size: 14px;
+  color: #A0A3AF;
+}
+
+/* 1) Animación del mando */
+@keyframes moverMando {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  50% { transform: translateY(-20px) rotate(5deg); opacity: 0.8; }
+  100% { transform: translateY(0) rotate(-5deg); opacity: 1; }
+}
+
+.hero-imagen img {
+  animation: moverMando 3s ease-in-out 1s infinite alternate forwards;
+}
+
+.hero-imagen img:hover {
+  animation-play-state: paused;
+}
+
+/* 2) Título del hero */
+@keyframes efectoTitulo {
+  0% { letter-spacing: 0px; }
+  100% { letter-spacing: 3px; }
+}
+
+.hero-texto h1 {
+  animation: efectoTitulo 4s ease-in-out 0.5s infinite alternate;
+}
+
+.hero-texto h1:hover {
+  animation-play-state: paused;
+}
+
+/* 3) Tarjetas de noticias */
+@keyframes subirTarjeta {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+.tarjeta {
+  animation: subirTarjeta 2s ease-out 0.2s infinite alternate;
+}
+
+.tarjeta:hover {
+  animation-play-state: paused;
+}
+
+/* 4) Opiniones */
+@keyframes brilloOpinion {
+  0% { box-shadow: 0 0 0px #00b8ff00; }
+  100% { box-shadow: 0 0 12px #00b8ff88; }
+}
+
+.opinion {
+  animation: brilloOpinion 3s ease-in 1s infinite alternate forwards;
+}
+
+.opinion:hover {
+  animation-play-state: paused;
+}
+
+/* 5) Header suave */
+@keyframes headerFade {
+  from { background-color: #0B0E17; }
+  to { background-color: #0f1320; }
+}
+
+header {
+  animation: headerFade 6s ease-in-out 0.5s infinite alternate;
+}
+
+header:hover {
+  animation-play-state: paused;
+}
+
