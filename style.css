@@ -9,49 +9,50 @@ body {
 
 /*HEADER*/
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
   height: 100px;
-  background-color: #0B0E17;
+  background-color: #0B0E17cc;
   display: flex;
-  justify-content: space-between; 
-  align-items: center;          
+  justify-content: space-between;
+  align-items: center;
   padding: 0 80px;
-  box-shadow: 0 4px 20px color: black;
-  z-index: 1000;                  
-  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  transition: box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+/* Sombras al hacer scroll */
+header:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.7);
 }
 
 /*LOGO*/
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .logo img {
   width: 180px;
   height: 130px;
+
+  /* Animación simple */
+  animation: flotar 3s ease-in-out infinite alternate;
 }
 
-/*MENÚ DE NAVEGACIÓN*/
-nav {
-  display: flex;
-  align-items: center;
+@keyframes flotar {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-6px);
+  }
 }
 
+/*MENÚ*/
 nav ul {
   list-style: none;
   display: flex;
-  gap: 40px;        
+  gap: 40px;
   margin: 0;
   padding: 0;
-}
-
-nav li {
-  display: inline-block;
 }
 
 nav a {
@@ -59,61 +60,65 @@ nav a {
   color: #FFFFFF;
   font-weight: 500;
   font-size: 16px;
-  transition: color 0.3s;
   position: relative;
-  padding: 5px 0;  
+  padding: 5px 0;
+  transition: 0.3s ease;
 }
+
+/* Línea animada al pasar el mouse */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #00B8FF;
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
 /*HERO*/
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 140px 80px 60px; 
+  padding: 140px 80px 60px;
   background-color: #0B0E17;
-  min-height: 600px; 
-  box-sizing: border-box;
+  min-height: 600px;
+  animation: aparecer 1.2s ease forwards;
+  opacity: 0;
 }
 
-.hero-texto {
-  max-width: 720px;
-}
-
-.hero-texto h1 {
-  font-size: 60px;
-  font-weight: 800;
-  color: #FFFFFF;
-  line-height: 1.1;
-  margin-bottom: 16px;
-}
-
-.hero-texto p {
-  font-size: 18px;
-  color: #A0A3AF;
-  margin: 0;
-  justify-content: left;
+@keyframes aparecer {
+  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(20px); }
 }
 
 .hero-imagen img {
-  width: 400px;   
-  height: auto;
-  margin-right: 40px;
+  width: 400px;
+  transition: transform 0.3s ease;
 }
+
+.hero-imagen img:hover {
+  transform: scale(1.06);
+}
+
 /*SECCIÓN NOTICIAS*/
 .noticias {
   padding: 80px 80px 100px;
-  background-color: #0B0E17;
 }
 
 .noticias h2 {
   font-size: 32px;
-  font-weight: 600;
   text-align: center;
-  color: #FFFFFF;
   margin-bottom: 60px;
   position: relative;
 }
 
-/*Línea decorativa azul bajo el título*/
 .noticias h2::after {
   content: "";
   display: block;
@@ -122,140 +127,59 @@ nav a {
   background-color: #00B8FF;
   margin: 14px auto 0;
   border-radius: 2px;
+  animation: crecer 2s infinite alternate ease-in-out;
 }
 
-/* EXTRA: GRID DE 3 COLUMNAS*/
+@keyframes crecer {
+  from { width: 60px; }
+  to { width: 120px; }
+}
+
+/* GRID */
 .contenedor-noticias {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 60px 50px; 
-  justify-items: stretch;
+  gap: 60px 50px;
 }
 
-/*TARJETAS DE NOTICIAS*/
+/*TARJETAS*/
 .tarjeta {
   background-color: #141823;
   border-radius: 12px;
-  box-shadow: 0 4px 20px color: black;
   overflow: hidden;
-  min-height: 380px; 
+  transition: transform 0.3s ease;
 }
 
-
-/*Imagen más grande*/
-.tarjeta img {
-  width: 100%;
-  height: 220px; 
-  object-fit: cover;
+/* Efecto hover suave */
+.tarjeta:hover {
+  transform: translateY(-8px);
 }
 
-/*Contenido dentro de la tarjeta*/
-.contenido-tarjeta {
-  padding: 28px; 
+/* Opiniones */
+.contenedor-opiniones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
 }
 
-/* Título de noticia */
-.tarjeta h3 {
-  font-size: 22px;
-  font-weight: 500;
-  color: #FFFFFF;
-  margin: 0 0 10px;
+.opinion {
+  background-color: #141823;
+  border-radius: 12px;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
 }
 
-/* Fecha */
-.fecha {
-  display: block;
-  font-size: 14px;
-  color: #A0A3AF;
-  margin-bottom: 12px;
+/* Glow animado */
+.opinion:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(0,184,255,0.2);
 }
 
-/* Descripción */
-.tarjeta p {
-  font-size: 16px;
-  color: #A0A3AF;
-  margin: 0;
-  line-height: 1.6;
-}
-
-/* FOOTER */
+/*FOOTER*/
 footer {
   background-color: #141823;
   text-align: center;
   padding: 30px 0;
   color: #A0A3AF;
   font-size: 14px;
-}
-/* FORO / OPINIONES */
-.foro {
-  background-color: #0B0E17;
-  padding: 80px 80px 100px;
-  text-align: center;
-}
-
-.foro h2 {
-  font-size: 32px;
-  font-weight: 600;
-  color: #FFFFFF;
-  margin-bottom: 10px;
-}
-
-.descripcion-foro {
-  font-size: 16px;
-  color: #A0A3AF;
-  margin-bottom: 60px;
-}
-
-/* Contenedor principal (2 filas de 3 columnas) */
-.contenedor-opiniones {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  justify-items: stretch;
-}
-
-/* Tarjetas de opiniones */
-.opinion {
-  background-color: #141823;
-  border-radius: 12px;
-  padding: 30px;
-  text-align: left;
-  box-shadow: 0 4px 20px color: black;
-  transition: transform 0.3s;
-}
-
-/* Usuario y avatar */
-.usuario {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 15px;
-}
-
-.usuario img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid #00B8FF;
-}
-
-.usuario h3 {
-  font-size: 18px;
-  font-weight: 500;
-  color: #00B8FF;
-  margin: 0;
-}
-
-/* Texto de opinión */
-.opinion p {
-  font-size: 16px;
-  color: #A0A3AF;
-  margin: 0 0 12px;
-  line-height: 1.5;
-}
-
-/* Fecha */
-.fecha-opinion {
-  font-size: 14px;
-  color: #A0A3AF;
 }
