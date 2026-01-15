@@ -98,6 +98,7 @@ nav a {
   width: 400px;
   height: auto;
   margin-right: 40px;
+  object-fit: cover;
 }
 
 /*SECCIÓN NOTICIAS*/
@@ -333,3 +334,4 @@ header {
 header:hover {
   animation-play-state: paused;
 }
+
