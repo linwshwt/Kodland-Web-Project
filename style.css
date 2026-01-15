@@ -240,6 +240,7 @@ footer {
   height: 50px;
   border-radius: 50%;
   border: 2px solid #00B8FF;
+  object-fit: cover;
 }
 
 .usuario h3 {
@@ -334,4 +335,5 @@ header {
 header:hover {
   animation-play-state: paused;
 }
+
 
