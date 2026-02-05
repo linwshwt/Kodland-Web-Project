@@ -1,9 +1,22 @@
 /*CONFIGURACIÓN GENERAL*/
+:root {
+  --bg: #0B0E17;
+  --card: #141823;
+  --text: #FFFFFF;
+  --muted: #A0A3AF;
+  --accent: #00B8FF;
+
+  --radius: 12px;
+  --shadow: 0 4px 20px black;
+  --container: 1200px;
+  --padX: 80px;
+}
+
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #0B0E17;
-  color: #FFFFFF;
+  background-color: var(--bg);
+  color: var(--text);
   scroll-behavior: smooth;
 }
 
@@ -14,54 +27,40 @@ header {
   left: 0;
   width: 100%;
   height: 100px;
-  background-color: #0B0E17;
+  background-color: var(--bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 80px;
-  box-shadow: 0 4px 20px color: black;
+  box-shadow: var(--shadow);
   z-index: 1000;
   box-sizing: border-box;
 }
 
-/*LOGO*/
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .logo img {
   width: 180px;
-  height: 130px;
+  height: auto;
 }
 
-/*MENÚ DE NAVEGACIÓN*/
-nav {
-  display: flex;
-  align-items: center;
-}
-
+/*MENÚ*/
 nav ul {
   list-style: none;
   display: flex;
-  gap: 40px;
-  margin: 0;
+  gap: 32px;
   padding: 0;
-}
-
-nav li {
-  display: inline-block;
+  margin: 0;
 }
 
 nav a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: var(--text);
   font-weight: 500;
   font-size: 16px;
   transition: color 0.3s;
-  position: relative;
-  padding: 5px 0;
+}
+
+nav a:hover {
+  color: var(--accent);
 }
 
 /*HERO*/
@@ -70,270 +69,321 @@ nav a {
   justify-content: space-between;
   align-items: center;
   padding: 140px 80px 60px;
-  background-color: #0B0E17;
+  background-color: var(--bg);
   min-height: 600px;
   box-sizing: border-box;
 }
 
 .hero-texto {
-  max-width: 720px;
+  max-width: 600px;
 }
 
 .hero-texto h1 {
   font-size: 60px;
   font-weight: 800;
-  color: #FFFFFF;
+  color: var(--text);
   line-height: 1.1;
   margin-bottom: 16px;
 }
 
 .hero-texto p {
   font-size: 18px;
-  color: #A0A3AF;
+  color: var(--muted);
   margin: 0;
   justify-content: left;
 }
 
 .hero-imagen img {
   width: 400px;
-  height: auto;
-  margin-right: 40px;
-  object-fit: cover;
+  margin-right: 30px;
 }
 
 /*SECCIÓN NOTICIAS*/
 .noticias {
   padding: 80px 80px 100px;
-  background-color: #0B0E17;
+  background-color: var(--bg);
 }
 
 .noticias h2 {
   font-size: 32px;
   font-weight: 600;
   text-align: center;
-  color: #FFFFFF;
+  color: var(--text);
   margin-bottom: 60px;
   position: relative;
 }
 
-/*Línea decorativa azul bajo el título*/
 .noticias h2::after {
   content: "";
   display: block;
   width: 100px;
   height: 3px;
-  background-color: #00B8FF;
+  background-color: var(--accent);
   margin: 14px auto 0;
   border-radius: 2px;
 }
 
-/* EXTRA: GRID DE 3 COLUMNAS*/
+/*GRID*/
 .contenedor-noticias {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 60px 50px;
-  justify-items: stretch;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /*TARJETAS DE NOTICIAS*/
 .tarjeta {
-  background-color: #141823;
+  background-color: var(--card);
   border-radius: 12px;
-  box-shadow: 0 4px 20px color: black;
+  box-shadow: var(--shadow);
   overflow: hidden;
   min-height: 380px;
 }
 
-/*Imagen más grande*/
 .tarjeta img {
   width: 100%;
-  height: 220px;
+  height: 180px;
   object-fit: cover;
 }
 
-/*Contenido dentro de la tarjeta*/
 .contenido-tarjeta {
-  padding: 28px;
+  padding: 20px;
 }
 
-/* Título de noticia */
 .tarjeta h3 {
   font-size: 22px;
   font-weight: 500;
-  color: #FFFFFF;
+  color: var(--text);
   margin: 0 0 10px;
 }
 
-/* Fecha */
 .fecha {
   display: block;
   font-size: 14px;
-  color: #A0A3AF;
+  color: var(--muted);
   margin-bottom: 12px;
 }
 
 /* Descripción */
 .tarjeta p {
   font-size: 16px;
-  color: #A0A3AF;
+  color: var(--muted);
   margin: 0;
   line-height: 1.6;
 }
 
 /* FOOTER */
 footer {
-  background-color: #141823;
+  background-color: var(--card);
   text-align: center;
   padding: 30px 0;
-  color: #A0A3AF;
+  color: var(--muted);
   font-size: 14px;
 }
 
 /* FORO / OPINIONES */
 .foro {
-  background-color: #0B0E17;
+  background-color: var(--bg);
   padding: 80px 80px 100px;
   text-align: center;
 }
 
-.foro h2 {
-  font-size: 32px;
-  font-weight: 600;
-  color: #FFFFFF;
-  margin-bottom: 10px;
-}
-
 .descripcion-foro {
-  font-size: 16px;
-  color: #A0A3AF;
-  margin-bottom: 60px;
+  color: var(--muted);
+  margin-bottom: 50px;
 }
 
-/* Contenedor principal (2 filas de 3 columnas) */
 .contenedor-opiniones {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  justify-items: stretch;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Tarjetas de opiniones */
 .opinion {
-  background-color: #141823;
+  background-color: var(--card);
+  padding: 25px;
   border-radius: 12px;
-  padding: 30px;
+  box-shadow: var(--shadow);
   text-align: left;
-  box-shadow: 0 4px 20px color: black;
-  transition: transform 0.3s;
 }
 
-/* Usuario y avatar */
-.usuario {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 15px;
-}
-
-.usuario img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid #00B8FF;
-  object-fit: cover;
-}
-
-.usuario h3 {
-  font-size: 18px;
-  font-weight: 500;
-  color: #00B8FF;
-  margin: 0;
-}
-
-/* Texto de opinión */
-.opinion p {
-  font-size: 16px;
-  color: #A0A3AF;
+.opinion h3 {
   margin: 0 0 12px;
-  line-height: 1.5;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text);
 }
 
-/* Fecha */
+.opinion p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 .fecha-opinion {
   font-size: 14px;
-  color: #A0A3AF;
+  color: var(--muted);
 }
 
-
-
-@keyframes moverMando {
-  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-  50% { transform: translateY(-20px) rotate(5deg); opacity: 0.8; }
-  100% { transform: translateY(0) rotate(-5deg); opacity: 1; }
+/*CONTACTO (FORMULARIO)*/
+.contacto {
+  background-color: var(--bg);
+  padding: 80px var(--padX) 100px;
+  text-align: center;
 }
 
-.hero-imagen img {
-  animation: moverMando 3s ease-in-out 1s infinite alternate forwards;
+.descripcion-contacto {
+  color: var(--muted);
+  margin: 0 0 40px;
 }
 
-.hero-imagen img:hover {
-  animation-play-state: paused;
+.formulario {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  text-align: left;
+  background: var(--card);
+  padding: 26px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
-/* 2) Título del hero */
-@keyframes efectoTitulo {
-  0% { letter-spacing: 0px; }
-  100% { letter-spacing: 3px; }
+.campo label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-weight: 500;
 }
 
-.hero-texto h1 {
-  animation: efectoTitulo 4s ease-in-out 0.5s infinite alternate;
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #2a3247;
+  background: #0f1320;
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  outline: none;
 }
 
-.hero-texto h1:hover {
-  animation-play-state: paused;
+.campo input:focus,
+.campo textarea:focus {
+  border-color: var(--accent);
 }
 
-/* 3) Tarjetas de noticias */
-@keyframes subirTarjeta {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+.campo-full {
+  grid-column: 1 / -1;
 }
 
-.tarjeta {
-  animation: subirTarjeta 2s ease-out 0.2s infinite alternate;
+.btn {
+  grid-column: 1 / -1;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.tarjeta:hover {
-  animation-play-state: paused;
+.btn:hover {
+  filter: brightness(1.05);
 }
 
-/* 4) Opiniones */
-@keyframes brilloOpinion {
-  0% { box-shadow: 0 0 0px #00b8ff00; }
-  100% { box-shadow: 0 0 12px #00b8ff88; }
+/*RESPONSIVE*/
+@media (max-width: 1024px) {
+  header {
+    padding: 0 40px;
+  }
+
+  .hero {
+    padding: 140px 40px 60px;
+  }
+
+  .noticias,
+  .foro,
+  .contacto {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .contenedor-noticias {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contenedor-opiniones {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-texto h1 {
+    font-size: 44px;
+  }
+
+  .hero-imagen img {
+    width: 320px;
+    margin-right: 0;
+  }
 }
 
-.opinion {
-  animation: brilloOpinion 3s ease-in 1s infinite alternate forwards;
+@media (max-width: 640px) {
+  header {
+    padding: 0 18px;
+    height: 84px;
+  }
+
+  .logo img {
+    width: 140px;
+    height: auto;
+  }
+
+  nav ul {
+    gap: 18px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 28px;
+    padding: 120px 18px 50px;
+  }
+
+  .hero-texto {
+    max-width: 100%;
+  }
+
+  .hero-texto h1 {
+    font-size: 34px;
+  }
+
+  .hero-texto p {
+    font-size: 16px;
+  }
+
+  .noticias,
+  .foro,
+  .contacto {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .contenedor-noticias {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contenedor-opiniones {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .formulario {
+    grid-template-columns: 1fr;
+  }
 }
-
-.opinion:hover {
-  animation-play-state: paused;
-}
-
-/* 5) Header suave */
-@keyframes headerFade {
-  from { background-color: #0B0E17; }
-  to { background-color: #0f1320; }
-}
-
-header {
-  animation: headerFade 6s ease-in-out 0.5s infinite alternate;
-}
-
-header:hover {
-  animation-play-state: paused;
-}
-
-
