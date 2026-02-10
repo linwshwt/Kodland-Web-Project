@@ -25,7 +25,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 60px;
+    padding: 25px 60px;
     background-color: var(--color-bg-secundario);
 }
 
@@ -52,162 +52,14 @@ nav ul li a:hover {
 /* ================= HERO ================= */
 
 .hero {
+    min-height: 85vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 80px 60px;
+    gap: 60px;
 }
 
-.hero-texto h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero-texto p {
-    color: var(--color-gris);
-    font-size: 18px;
-}
-
-.hero-imagen img {
-    width: 380px;
-}
-
-/* ================= NOTICIAS ================= */
-
-.noticias {
-    padding: 60px;
-}
-
-.noticias h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-}
-
-.contenedor-noticias {
-    display: flex;
-    gap: 30px;
-}
-
-.tarjeta {
-    background-color: var(--color-card);
-    border-radius: 15px;
-    overflow: hidden;
-    width: 100%;
-    box-shadow: 0 4px 20px black;
-}
-
-.tarjeta img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.contenido-tarjeta {
-    padding: 20px;
-}
-
-.contenido-tarjeta h3 {
-    margin-bottom: 10px;
-}
-
-.fecha {
-    font-size: 12px;
-    color: var(--color-gris);
-}
-
-.contenido-tarjeta p {
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-/* ================= FORO ================= */
-
-.foro {
-    padding: 60px;
-}
-
-.descripcion-foro {
-    color: var(--color-gris);
-    margin-bottom: 30px;
-}
-
-.contenedor-opiniones {
-    display: flex;
-    gap: 30px;
-}
-
-.opinion {
-    background-color: var(--color-card);
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px black;
-}
-
-.opinion h3 {
-    margin-bottom: 10px;
-}
-
-.fecha-opinion {
-    font-size: 12px;
-    color: var(--color-gris);
-}
-
-/* ================= CONTACTO ================= */
-
-.contacto {
-    padding: 60px;
-}
-
-.formulario {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 600px;
-}
-
-.campo {
-    display: flex;
-    flex-direction: column;
-}
-
-.campo-full {
-    grid-column: 1 / 3;
-}
-
-label {
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-input,
-textarea {
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-}
-
-.btn {
-    grid-column: 1 / 3;
-    padding: 12px;
-    background-color: var(--color-acento);
-    color: black;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.btn:hover {
-    opacity: 0.8;
-}
-
-/* ================= FOOTER ================= */
-
-footer {
-    background-color: var(--color-bg-secundario);
-    text-align: center;
-    padding: 20px;
-    margin-top: 60px;
-}
+.hero-texto
 
 
