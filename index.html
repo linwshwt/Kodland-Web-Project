@@ -1,80 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gamer</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamer News</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<header>
+<body id="inicio">
+
+  <!-- ==== HEADER ==== -->
+  <header>
     <div class="logo">
-        <img src="logo.png" alt="Logo">
-        <h2>GAMER</h2>
+      <img src="logo.png" alt="Logo Gamer">
     </div>
+
     <nav>
-        <a href="#">INICIO</a>
-        <a href="#">NOTICIAS</a>
-        <a href="#">RESEÑAS</a>
-        <a href="#">FOROS</a>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#noticias">Noticias</a></li>
+        <li><a href="#foro">Foro</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<section class="hero">
-    <div class="hero-text">
-        <h1>Descubre lo último en videojuegos</h1>
-        <p>Mantente al día con los lanzamientos, reseñas y foros más recientes.</p>
+  <!-- ==== HERO ==== -->
+  <section class="hero">
+    <div class="hero-texto">
+      <h1>Las mejores <br> noticias gamer</h1>
+      <p>Actualizaciones diarias, análisis, rumores y lanzamientos.</p>
     </div>
-    <img src="mando.png" alt="Mando">
-</section>
 
-<section class="news">
-    <h2>Últimas Noticias</h2>
-
-    <div class="cards">
-        <div class="card">
-            <img src="noticia1.jpg" alt="Noticia 1">
-            <h3>Lanzamiento épico de Eldoria</h3>
-            <p>Nuevos mapas, personajes y misiones.</p>
-        </div>
-
-        <div class="card">
-            <img src="noticia2.jpg" alt="Noticia 2">
-            <h3>Top 5 juegos indie 2025</h3>
-            <p>Los mejores juegos independientes del año.</p>
-        </div>
-
-        <div class="card">
-            <img src="noticia3.jpg" alt="Noticia 3">
-            <h3>CyberRunners se actualiza</h3>
-            <p>Nuevas armas y eventos temporales.</p>
-        </div>
+    <div class="hero-imagen">
+      <img src="mando.png" alt="Imagen Gamer">
     </div>
-</section>
+  </section>
 
-<section class="opinions">
-    <h2>Opiniones</h2>
+  <!-- ==== NOTICIAS ==== -->
+  <section class="noticias" id="noticias">
+    <h2>Noticias Recientes</h2>
 
-    <div class="profiles">
-        <div class="profile">
-            <img src="perfil1.jpg" alt="Perfil 1">
-            <p>Excelente página.</p>
+    <div class="contenedor-noticias">
+
+      <article class="tarjeta">
+        <img src="noticia1.jpg" alt="Noticia 1">
+        <div class="contenido-tarjeta">
+          <h3>Nuevo RPG rompe récords</h3>
+          <span class="fecha">Publicado el 10 de enero de 2026</span>
+          <p>El nuevo RPG del año sorprende con gráficos realistas.</p>
         </div>
-        <div class="profile">
-            <img src="perfil2.jpg" alt="Perfil 2">
-            <p>Muy buen contenido.</p>
+      </article>
+
+      <article class="tarjeta">
+        <img src="noticia2.jpg" alt="Noticia 2">
+        <div class="contenido-tarjeta">
+          <h3>Consola next-gen filtrada</h3>
+          <span class="fecha">Publicado el 8 de enero de 2026</span>
+          <p>Se filtran imágenes y detalles de la nueva consola.</p>
         </div>
-        <div class="profile">
-            <img src="perfil3.jpg" alt="Perfil 3">
-            <p>Diseño atractivo.</p>
+      </article>
+
+      <article class="tarjeta">
+        <img src="noticia3.jpg" alt="Noticia 3">
+        <div class="contenido-tarjeta">
+          <h3>Final histórica de eSports</h3>
+          <span class="fecha">Publicado el 5 de enero de 2026</span>
+          <p>Una final épica definió al campeón del torneo.</p>
         </div>
+      </article>
+
     </div>
-</section>
+  </section>
 
-<footer>
-    <p>© Gamer</p>
-</footer>
+  <!-- ==== FORO ==== -->
+  <section class="foro" id="foro">
+    <h2>Foro Gamer</h2>
+    <p class="descripcion-foro">Opiniones de la comunidad gamer.</p>
+
+    <div class="contenedor-opiniones">
+
+      <article class="opinion">
+        <h3>El nuevo RPG es brutal</h3>
+        <p>Me encantó el mundo abierto y la historia.</p>
+        <span class="fecha-opinion">25 de octubre de 2025</span>
+      </article>
+
+      <article class="opinion">
+        <h3>La consola promete mucho</h3>
+        <p>Si los specs son reales, será increíble.</p>
+        <span class="fecha-opinion">22 de octubre de 2025</span>
+      </article>
+
+      <article class="opinion">
+        <h3>eSports cada vez más grandes</h3>
+        <p>Los torneos ya parecen eventos deportivos.</p>
+        <span class="fecha-opinion">20 de octubre de 2025</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ==== CONTACTO ==== -->
+  <section class="contacto" id="contacto">
+    <h2>Contacto</h2>
+
+    <form class="formulario">
+      <div class="campo">
+        <label>Nombre</label>
+        <input type="text" required>
+      </div>
+
+      <div class="campo">
+        <label>Correo</label>
+        <input type="email" required>
+      </div>
+
+      <div class="campo campo-full">
+        <label>Mensaje</label>
+        <textarea rows="4"></textarea>
+      </div>
+
+      <button class="btn">Enviar</button>
+    </form>
+  </section>
+
+  <!-- ==== FOOTER ==== -->
+  <footer>
+    <p>© 2026 Gamer News</p>
+  </footer>
 
 </body>
 </html>
+
