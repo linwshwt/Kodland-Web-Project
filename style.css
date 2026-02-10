@@ -1,241 +1,244 @@
+/* ================= ROOT ================= */
 :root {
-    --color-bg: #0b0f1a;
-    --color-bg-secundario: #070b14;
-    --color-card: #11162a;
-    --color-texto: #ffffff;
-    --color-acento: #00bfff;
-    --color-gris: #b0b0b0;
+  --color-bg: #0B0E17;
+  --color-bg-secundario: #0f1320;
+  --color-card: #141823;
+  --color-texto: #FFFFFF;
+  --color-acento: #00B8FF;
+  --color-gris: #A0A3AF;
 }
 
+/* ================= RESET ================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-    background-color: var(--color-bg);
-    color: var(--color-texto);
+  background-color: var(--color-bg);
+  color: var(--color-texto);
+  scroll-behavior: smooth;
 }
 
 /* ================= HEADER ================= */
-
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 35px 80px;
-    background-color: var(--color-bg-secundario);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130px; /* 🔥 MÁS ALTO */
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 90px;
+  z-index: 1000;
+  animation: headerGlow 6s ease-in-out infinite alternate;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+@keyframes headerGlow {
+  from { background-color: #0B0E17; }
+  to { background-color: #10172a; }
 }
 
 .logo img {
-    width: 70px; /* 🔥 LOGO MÁS GRANDE */
+  width: 240px;      /* 🔥 LOGO GRANDE */
+  height: auto;
+  animation: logoPulse 4s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(1.05); opacity: 1; }
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
+  list-style: none;
+  display: flex;
+  gap: 45px;
 }
 
-nav ul li a {
-    color: var(--color-texto);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  position: relative;
 }
 
-nav ul li a:hover {
-    color: var(--color-acento);
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-acento);
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 /* ================= HERO ================= */
-
 .hero {
-    min-height: 90vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 120px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 200px 90px 120px;
+  min-height: 100vh;
 }
 
 .hero-texto {
-    max-width: 650px;
+  max-width: 720px;
 }
 
 .hero-texto h1 {
-    font-size: 64px; /* 🔥 TÍTULO MÁS GRANDE */
-    line-height: 1.1;
-    margin-bottom: 25px;
+  font-size: 72px; /* 🔥 TÍTULO IMPACTANTE */
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  animation: tituloVivo 4s ease-in-out infinite alternate;
+}
+
+@keyframes tituloVivo {
+  from { letter-spacing: 0px; }
+  to { letter-spacing: 3px; }
 }
 
 .hero-texto p {
-    font-size: 20px;
-    color: var(--color-gris);
+  font-size: 20px;
+  color: var(--color-gris);
 }
 
 .hero-imagen img {
-    width: 520px;
+  width: 520px;
+  animation: mandoFlota 3s ease-in-out infinite alternate;
 }
 
-/* ================= SECCIONES ================= */
-
-section {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 120px 80px;
+@keyframes mandoFlota {
+  from { transform: translateY(0) rotate(0deg); }
+  to { transform: translateY(-25px) rotate(5deg); }
 }
 
 /* ================= NOTICIAS ================= */
+.noticias {
+  padding: 120px 90px;
+}
 
 .noticias h2 {
-    font-size: 38px;
-    margin-bottom: 70px;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.noticias h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: var(--color-acento);
+  margin: 15px auto 0;
 }
 
 .contenedor-noticias {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 45px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
 }
 
 .tarjeta {
-    background-color: var(--color-card);
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+  background: var(--color-card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: transform 0.4s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-15px) scale(1.02);
 }
 
 .tarjeta img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover; /* 🔥 YA NO SE VE MAL */
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
 }
 
 .contenido-tarjeta {
-    padding: 28px;
+  padding: 28px;
 }
 
-.contenido-tarjeta h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+.tarjeta h3 {
+  font-size: 22px;
 }
 
 .fecha {
-    font-size: 13px;
-    color: var(--color-gris);
+  font-size: 14px;
+  color: var(--color-gris);
 }
 
-.contenido-tarjeta p {
-    margin-top: 12px;
-    font-size: 15px;
-    color: var(--color-gris);
+/* ================= FORO ================= */
+.foro {
+  padding: 120px 90px;
+  text-align: center;
 }
-
-/* ================= FORO (TEMPORAL, SE CAMBIA LUEGO) ================= */
 
 .foro h2 {
-    font-size: 38px;
-    margin-bottom: 10px;
+  font-size: 40px;
+  margin-bottom: 10px;
 }
 
 .descripcion-foro {
-    font-size: 18px;
-    color: var(--color-gris);
-    margin-bottom: 60px;
+  font-size: 18px;
+  color: var(--color-gris);
+  margin-bottom: 70px;
 }
 
 .contenedor-opiniones {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
 }
 
 .opinion {
-    background-color: var(--color-card);
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+  background: var(--color-card);
+  padding: 32px;
+  border-radius: 16px;
+  text-align: left;
+  transition: box-shadow 0.4s;
 }
 
-.opinion h3 {
-    margin-bottom: 12px;
+.opinion:hover {
+  box-shadow: 0 0 25px rgba(0,184,255,0.5);
 }
 
-.fecha-opinion {
-    font-size: 12px;
-    color: var(--color-gris);
-    margin-top: 12px;
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
 }
 
-/* ================= CONTACTO ================= */
-
-.contacto {
-    padding-bottom: 160px;
+.usuario img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--color-acento);
 }
 
-.contacto h2 {
-    font-size: 38px;
-    margin-bottom: 50px;
-}
-
-.formulario {
-    max-width: 750px;
-    background-color: var(--color-card);
-    padding: 45px;
-    border-radius: 22px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-}
-
-.campo {
-    display: flex;
-    flex-direction: column;
-}
-
-.campo-full {
-    grid-column: 1 / 3;
-}
-
-label {
-    margin-bottom: 6px;
-    font-size: 14px;
-}
-
-input,
-textarea {
-    padding: 14px;
-    border-radius: 10px;
-    border: none;
-    background-color: #0b0f1a;
-    color: white;
-}
-
-.btn {
-    grid-column: 1 / 3;
-    padding: 16px;
-    background-color: var(--color-acento);
-    border: none;
-    border-radius: 12px;
-    font-weight: 700;
-    cursor: pointer;
+.usuario h3 {
+  color: var(--color-acento);
+  font-size: 18px;
 }
 
 /* ================= FOOTER ================= */
-
 footer {
-    background-color: var(--color-bg-secundario);
-    text-align: center;
-    padding: 30px;
-    color: var(--color-gris);
+  background: var(--color-card);
+  text-align: center;
+  padding: 35px;
+  color: var(--color-gris);
 }
-
-
