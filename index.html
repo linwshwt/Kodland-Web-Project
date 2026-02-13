@@ -3,188 +3,243 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Noticias actualizadas sobre videojuegos y lanzamientos." />
-  <meta name="author" content="Tu Nombre" />
-  <title>Noticias Gamer</title>
+  <title>GAMER | Noticias</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <!-- IMPORTANTE: este nombre debe coincidir EXACTO con tu archivo -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Inicio">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M7.5 15.5h-1c-1.9 0-3.4-1.5-3.4-3.4 0-1.9 1.5-3.4 3.4-3.4h11c1.9 0 3.4 1.5 3.4 3.4 0 1.9-1.5 3.4-3.4 3.4h-1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M9 12h3M10.5 10.5v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M16.5 11.2h.01M18 12.8h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M7.5 15.5c.6-1.1 1.7-1.8 3-1.8h3c1.3 0 2.4.7 3 1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">GAMER</span>
+      </a>
 
-  <!-- ==== HEADER ==== -->
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Logo Gamer">
+      <nav class="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#noticias">Noticias</a>
+        <a href="#foro">Foro</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </div>
-
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#noticias">Noticias</a></li>
-        <li><a href="#foro">Foro</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <!-- ==== HERO SECTION ==== -->
-  <section class="hero" id="inicio">
-    <div class="hero-texto">
-      <h1>Descubre lo último en videojuegos</h1>
-      <p>Mantente al día con los lanzamientos, reseñas y foros más recientes.</p>
-    </div>
-
-    <div class="hero-imagen">
-      <img src="mando.png" alt="Icono mando gamer">
-    </div>
-  </section>
-
-  <!-- ==== NOTICIAS ==== -->
+  <!-- HERO -->
   <main>
-    <section class="noticias" id="noticias">
-      <h2>Últimas Noticias</h2>
+    <section class="hero" id="inicio">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1>Descubre lo último<br>en videojuegos</h1>
+          <p>Mantente al día con los lanzamientos, reseñas y foros más recientes.</p>
 
-      <div class="contenedor-noticias">
-
-        <!-- NOTICIA 1 -->
-        <article class="tarjeta">
-          <img src="noticia1.jpg" alt="Noticia 1">
-          <div class="contenido-tarjeta">
-            <h3>Lanzamiento épico de Eldoria</h3>
-            <span class="fecha">30 de octubre de 2025</span>
-            <p>El nuevo RPG del año impresiona con su mundo abierto y criaturas míticas.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#noticias">Ver noticias</a>
+            <a class="btn ghost" href="#foro">Ir al foro</a>
           </div>
-        </article>
+        </div>
 
-        <!-- NOTICIA 2 -->
-        <article class="tarjeta">
-          <img src="noticia2.jpg" alt="Noticia 2">
-          <div class="contenido-tarjeta">
-            <h3>Tráiler del shooter más esperado</h3>
-            <span class="fecha">28 de octubre de 2025</span>
-            <p>Gráficos de última generación y acción sin límites en este título futurista.</p>
+        <div class="hero-right" aria-hidden="true">
+          <img src="mando.png" alt="Mando gamer">
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTICIAS -->
+    <section class="section" id="noticias">
+      <div class="container">
+        <header class="section-head">
+          <h2>Últimas Noticias</h2>
+          <span class="bar" aria-hidden="true"></span>
+        </header>
+
+        <div class="grid news-grid">
+          <article class="card news">
+            <img class="news-img" src="noticia1.jpg" alt="Noticia 1">
+            <div class="card-body">
+              <h3>Lanzamiento épico de Eldoria</h3>
+              <div class="meta">Publicado el 30 de octubre de 2025</div>
+              <p>El nuevo RPG del año impresiona con su mundo abierto y criaturas míticas.</p>
+            </div>
+          </article>
+
+          <article class="card news">
+            <img class="news-img" src="noticia2.jpg" alt="Noticia 2">
+            <div class="card-body">
+              <h3>Tráiler del shooter más esperado</h3>
+              <div class="meta">Publicado el 28 de octubre de 2025</div>
+              <p>Gráficos de última generación y acción sin límites en este título futurista.</p>
+            </div>
+          </article>
+
+          <article class="card news">
+            <img class="news-img" src="noticia3.jpg" alt="Noticia 3">
+            <div class="card-body">
+              <h3>La nueva consola portátil sorprende</h3>
+              <div class="meta">Publicado el 26 de octubre de 2025</div>
+              <p>Rendimiento y comodidad en un diseño compacto que desafía a Nintendo.</p>
+            </div>
+          </article>
+
+          <article class="card news">
+            <img class="news-img" src="noticia0.jpg" alt="Noticia 4">
+            <div class="card-body">
+              <h3>Remake de “Galaxy Quest” confirmado</h3>
+              <div class="meta">Publicado el 25 de octubre de 2025</div>
+              <p>Los fanáticos celebran el regreso de uno de los juegos espaciales más queridos.</p>
+            </div>
+          </article>
+
+          <article class="card news">
+            <img class="news-img" src="noticia01.jpg" alt="Noticia 5">
+            <div class="card-body">
+              <h3>eSports: récord mundial de audiencia</h3>
+              <div class="meta">Publicado el 23 de octubre de 2025</div>
+              <p>El torneo internacional superó los 10 millones de espectadores simultáneos.</p>
+            </div>
+          </article>
+
+          <article class="card news">
+            <img class="news-img" src="noticia66.jpg" alt="Noticia 6">
+            <div class="card-body">
+              <h3>Nueva actualización de “CyberRunner”</h3>
+              <div class="meta">Publicado el 21 de octubre de 2025</div>
+              <p>El popular juego de mundo abierto recibe mejoras gráficas y nuevo contenido.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORO -->
+    <section class="section" id="foro">
+      <div class="container">
+        <header class="section-head">
+          <h2>¿Qué opinan otros jugadores?</h2>
+          <p class="sub">Comparte y descubre las opiniones de la comunidad gamer.</p>
+        </header>
+
+        <div class="grid forum-grid">
+          <article class="card forum">
+            <div class="user">
+              <img class="avatar" src="perfil1.jpg" alt="@PixelMaster">
+              <div>
+                <div class="handle">@PixelMaster</div>
+                <div class="tag">#RPG #Eldoria</div>
+              </div>
+            </div>
+            <p class="quote">"El nuevo Eldoria es una obra maestra. La historia y los gráficos son impresionantes. ¡Totalmente recomendado!"</p>
+            <div class="meta">Publicado el 29 de octubre de 2025</div>
+          </article>
+
+          <article class="card forum">
+            <div class="user">
+              <img class="avatar" src="perfil2.jpg" alt="@RetroHunter">
+              <div>
+                <div class="handle">@RetroHunter</div>
+                <div class="tag">#Shooter #Balance</div>
+              </div>
+            </div>
+            <p class="quote">"Me encantó el nuevo shooter, pero deberían mejorar el equilibrio de las armas. Aun así, es muy divertido."</p>
+            <div class="meta">Publicado el 27 de octubre de 2025</div>
+          </article>
+
+          <article class="card forum">
+            <div class="user">
+              <img class="avatar" src="perfil3.jpg" alt="@NeoGamerX">
+              <div>
+                <div class="handle">@NeoGamerX</div>
+                <div class="tag">#Portable #Viajes</div>
+              </div>
+            </div>
+            <p class="quote">"La nueva portátil me sorprendió. Corre juegos exigentes sin problemas. Ideal para viajar."</p>
+            <div class="meta">Publicado el 25 de octubre de 2025</div>
+          </article>
+
+          <article class="card forum">
+            <div class="user">
+              <img class="avatar" src="perfil4.jpg" alt="@GameLover22">
+              <div>
+                <div class="handle">@GameLover22</div>
+                <div class="tag">#RPG #Música</div>
+              </div>
+            </div>
+            <p class="quote">"¡Qué gran año para los RPG! Eldoria y Mystic Realms son joyas absolutas. La música me fascinó."</p>
+            <div class="meta">Publicado el 24 de octubre de 2025</div>
+          </article>
+
+          <article class="card forum">
+            <div class="user">
+              <img class="avatar" src="perfil5.jpg" alt="@CyberNate">
+              <div>
+                <div class="handle">@CyberNate</div>
+                <div class="tag">#Update #CyberRunner</div>
+              </div>
+            </div>
+            <p class="quote">"La última actualización de CyberRunner arregló todo. Ahora los combates son fluidos y la historia engancha."</p>
+            <div class="meta">Publicado el 22 de octubre de 2025</div>
+          </article>
+
+          <article class="card forum">
+            <div class="user">
+              <img class="avatar" src="perfil6.jpg" alt="@PixelQueen">
+              <div>
+                <div class="handle">@PixelQueen</div>
+                <div class="tag">#Comunidad #Reseñas</div>
+              </div>
+            </div>
+            <p class="quote">"La comunidad gamer está más activa que nunca. Me encanta leer las reseñas y compartir mis experiencias."</p>
+            <div class="meta">Publicado el 20 de octubre de 2025</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section" id="contacto">
+      <div class="container">
+        <header class="section-head">
+          <h2>Contacto</h2>
+          <p class="sub">¿Tienes sugerencias o una noticia? Escríbenos.</p>
+        </header>
+
+        <form class="contact" action="#" method="post">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" placeholder="Tu nombre">
           </div>
-        </article>
 
-        <!-- NOTICIA 3 -->
-        <article class="tarjeta">
-          <img src="noticia3.jpg" alt="Noticia 3">
-          <div class="contenido-tarjeta">
-            <h3>La nueva consola portátil sorprende</h3>
-            <span class="fecha">26 de octubre de 2025</span>
-            <p>Rendimiento y comodidad en un diseño compacto que desafía a Nintendo.</p>
+          <div class="field">
+            <label for="correo">Correo</label>
+            <input id="correo" type="email" placeholder="tucorreo@email.com">
           </div>
-        </article>
 
-        <!-- NOTICIA 4 -->
-        <article class="tarjeta">
-          <img src="noticia0.jpg" alt="Noticia 4">
-          <div class="contenido-tarjeta">
-            <h3>Remake de “Galaxy Quest” confirmado</h3>
-            <span class="fecha">25 de octubre de 2025</span>
-            <p>Los fanáticos celebran el regreso de uno de los juegos espaciales más queridos.</p>
+          <div class="field full">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" rows="6" placeholder="Escribe tu mensaje..."></textarea>
           </div>
-        </article>
 
-        <!-- NOTICIA 5 -->
-        <article class="tarjeta">
-          <img src="noticia01.jpg" alt="Noticia 5">
-          <div class="contenido-tarjeta">
-            <h3>eSports: récord mundial de audiencia</h3>
-            <span class="fecha">23 de octubre de 2025</span>
-            <p>El torneo internacional superó los 10 millones de espectadores simultáneos.</p>
-          </div>
-        </article>
-
-        <!-- NOTICIA 6 -->
-        <article class="tarjeta">
-          <img src="noticia66.jpg" alt="Noticia 6">
-          <div class="contenido-tarjeta">
-            <h3>Nueva actualización de “CyberRunner”</h3>
-            <span class="fecha">21 de octubre de 2025</span>
-            <p>El popular juego de mundo abierto recibe mejoras gráficas y nuevo contenido.</p>
-          </div>
-        </article>
-
+          <button class="btn primary full" type="submit">Enviar</button>
+        </form>
       </div>
     </section>
   </main>
 
-  <!-- ==== FORO / OPINIONES ==== -->
-  <section class="foro" id="foro">
-    <h2>¿Qué opinan otros jugadores?</h2>
-    <p class="descripcion-foro">Comparte y descubre las opiniones de la comunidad gamer.</p>
-
-    <div class="contenedor-opiniones">
-
-      <!-- Opinión 1 -->
-      <article class="opinion">
-        <div class="usuario">
-          <img src="perfil1.jpg" alt="Jugador 1">
-          <h3>@PixelMaster</h3>
-        </div>
-        <p>"El nuevo Eldoria es una obra maestra. La historia y los gráficos son impresionantes. ¡Totalmente recomendado!"</p>
-        <span class="fecha-opinion">Publicado el 29 de octubre de 2025</span>
-      </article>
-
-      <!-- Opinión 2 -->
-      <article class="opinion">
-        <div class="usuario">
-          <img src="perfil2.jpg" alt="Jugador 2">
-          <h3>@RetroHunter</h3>
-        </div>
-        <p>"Me encantó el nuevo shooter, pero deberían mejorar el equilibrio de las armas. Aun así, es muy divertido."</p>
-        <span class="fecha-opinion">Publicado el 27 de octubre de 2025</span>
-      </article>
-
-      <!-- Opinión 3 -->
-      <article class="opinion">
-        <div class="usuario">
-          <img src="perfil3.jpg" alt="Jugador 3">
-          <h3>@NeoGamerX</h3>
-        </div>
-        <p>"La nueva portátil me sorprendió. Corre juegos exigentes sin problemas. Ideal para viajar."</p>
-        <span class="fecha-opinion">Publicado el 25 de octubre de 2025</span>
-      </article>
-
-      <!-- Opinión 4 -->
-      <article class="opinion">
-        <div class="usuario">
-          <img src="perfil4.jpg" alt="Jugador 4">
-          <h3>@GameLover22</h3>
-        </div>
-        <p>"¡Qué gran año para los RPG! Eldoria y Mystic Realms son joyas absolutas. La música me fascinó."</p>
-        <span class="fecha-opinion">Publicado el 24 de octubre de 2025</span>
-      </article>
-
-      <!-- Opinión 5 -->
-      <article class="opinion">
-        <div class="usuario">
-          <img src="perfil5.jpg" alt="Jugador 5">
-          <h3>@CyberNate</h3>
-        </div>
-        <p>"La última actualización de CyberRunner arregló todo. Ahora los combates son fluidos y la historia engancha."</p>
-        <span class="fecha-opinion">Publicado el 22 de octubre de 2025</span>
-      </article>
-
-      <!-- Opinión 6 -->
-      <article class="opinion">
-        <div class="usuario">
-          <img src="perfil6.jpg" alt="Jugador 6">
-          <h3>@PixelQueen</h3>
-        </div>
-        <p>"La comunidad gamer está más activa que nunca. Me encanta leer las reseñas y compartir mis experiencias."</p>
-        <span class="fecha-opinion">Publicado el 20 de octubre de 2025</span>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ==== FOOTER ==== -->
-  <footer>
-    <p>© 2025 Noticias Gamer — Todos los derechos reservados</p>
-  </footer>
-
+  <footer class="footer">© 2026 Gamer News</footer>
 </body>
 </html>
+
+
