@@ -1,13 +1,11 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GAMER | Noticias</title>
-
-  <!-- IMPORTANTE: este nombre debe coincidir EXACTO con tu archivo -->
   <link rel="stylesheet" href="./style.css" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -18,14 +16,6 @@
   <header class="header">
     <div class="container header-inner">
       <a class="brand" href="#inicio" aria-label="Inicio">
-        <span class="brand-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M7.5 15.5h-1c-1.9 0-3.4-1.5-3.4-3.4 0-1.9 1.5-3.4 3.4-3.4h11c1.9 0 3.4 1.5 3.4 3.4 0 1.9-1.5 3.4-3.4 3.4h-1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M9 12h3M10.5 10.5v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M16.5 11.2h.01M18 12.8h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-            <path d="M7.5 15.5c.6-1.1 1.7-1.8 3-1.8h3c1.3 0 2.4.7 3 1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </span>
         <span class="brand-text">GAMER</span>
       </a>
 
@@ -38,18 +28,12 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <main>
+    <!-- HERO -->
     <section class="hero" id="inicio">
       <div class="container hero-inner">
         <div class="hero-left">
           <h1>Descubre lo último<br>en videojuegos</h1>
-          <p>Mantente al día con los lanzamientos, reseñas y foros más recientes.</p>
-
-          <div class="hero-actions">
-            <a class="btn primary" href="#noticias">Ver noticias</a>
-            <a class="btn ghost" href="#foro">Ir al foro</a>
-          </div>
         </div>
 
         <div class="hero-right" aria-hidden="true">
@@ -61,12 +45,12 @@
     <!-- NOTICIAS -->
     <section class="section" id="noticias">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head section-center">
           <h2>Últimas Noticias</h2>
           <span class="bar" aria-hidden="true"></span>
         </header>
 
-        <div class="grid news-grid">
+        <div class="grid3">
           <article class="card news">
             <img class="news-img" src="noticia1.jpg" alt="Noticia 1">
             <div class="card-body">
@@ -127,88 +111,81 @@
     <!-- FORO -->
     <section class="section" id="foro">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head section-right">
           <h2>¿Qué opinan otros jugadores?</h2>
-          <p class="sub">Comparte y descubre las opiniones de la comunidad gamer.</p>
         </header>
 
-        <div class="grid forum-grid">
+        <div class="grid3">
           <article class="card forum">
             <div class="user">
               <img class="avatar" src="perfil1.jpg" alt="@PixelMaster">
-              <div>
+              <div class="user-info">
                 <div class="handle">@PixelMaster</div>
                 <div class="tag">#RPG #Eldoria</div>
               </div>
             </div>
             <p class="quote">"El nuevo Eldoria es una obra maestra. La historia y los gráficos son impresionantes. ¡Totalmente recomendado!"</p>
-            <div class="meta">Publicado el 29 de octubre de 2025</div>
           </article>
 
           <article class="card forum">
             <div class="user">
               <img class="avatar" src="perfil2.jpg" alt="@RetroHunter">
-              <div>
+              <div class="user-info">
                 <div class="handle">@RetroHunter</div>
                 <div class="tag">#Shooter #Balance</div>
               </div>
             </div>
             <p class="quote">"Me encantó el nuevo shooter, pero deberían mejorar el equilibrio de las armas. Aun así, es muy divertido."</p>
-            <div class="meta">Publicado el 27 de octubre de 2025</div>
           </article>
 
           <article class="card forum">
             <div class="user">
               <img class="avatar" src="perfil3.jpg" alt="@NeoGamerX">
-              <div>
+              <div class="user-info">
                 <div class="handle">@NeoGamerX</div>
                 <div class="tag">#Portable #Viajes</div>
               </div>
             </div>
             <p class="quote">"La nueva portátil me sorprendió. Corre juegos exigentes sin problemas. Ideal para viajar."</p>
-            <div class="meta">Publicado el 25 de octubre de 2025</div>
           </article>
 
           <article class="card forum">
             <div class="user">
               <img class="avatar" src="perfil4.jpg" alt="@GameLover22">
-              <div>
+              <div class="user-info">
                 <div class="handle">@GameLover22</div>
                 <div class="tag">#RPG #Música</div>
               </div>
             </div>
             <p class="quote">"¡Qué gran año para los RPG! Eldoria y Mystic Realms son joyas absolutas. La música me fascinó."</p>
-            <div class="meta">Publicado el 24 de octubre de 2025</div>
           </article>
 
           <article class="card forum">
             <div class="user">
               <img class="avatar" src="perfil5.jpg" alt="@CyberNate">
-              <div>
+              <div class="user-info">
                 <div class="handle">@CyberNate</div>
                 <div class="tag">#Update #CyberRunner</div>
               </div>
             </div>
             <p class="quote">"La última actualización de CyberRunner arregló todo. Ahora los combates son fluidos y la historia engancha."</p>
-            <div class="meta">Publicado el 22 de octubre de 2025</div>
           </article>
 
           <article class="card forum">
             <div class="user">
               <img class="avatar" src="perfil6.jpg" alt="@PixelQueen">
-              <div>
+              <div class="user-info">
                 <div class="handle">@PixelQueen</div>
                 <div class="tag">#Comunidad #Reseñas</div>
               </div>
             </div>
             <p class="quote">"La comunidad gamer está más activa que nunca. Me encanta leer las reseñas y compartir mis experiencias."</p>
-            <div class="meta">Publicado el 20 de octubre de 2025</div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- CONTACTO -->
+    <!-- CONTACTO (igual) -->
     <section class="section" id="contacto">
       <div class="container">
         <header class="section-head">
